@@ -26,7 +26,7 @@ Encode AttributeNameList
 
 ``` purescript
 newtype AttributeValue
-  = AttributeValue { "Value" :: NullOrUndefined (String) }
+  = AttributeValue { "Value" :: Maybe (String) }
 ```
 
 <p>The values of a given attribute, such as <code>Throughput Optimized HDD</code> or <code>Provisioned IOPS</code> for the <code>Amazon EC2</code> <code>volumeType</code> attribute.</p>
@@ -51,7 +51,7 @@ Constructs AttributeValue from required parameters
 #### `newAttributeValue'`
 
 ``` purescript
-newAttributeValue' :: ({ "Value" :: NullOrUndefined (String) } -> { "Value" :: NullOrUndefined (String) }) -> AttributeValue
+newAttributeValue' :: ({ "Value" :: Maybe (String) } -> { "Value" :: Maybe (String) }) -> AttributeValue
 ```
 
 Constructs AttributeValue's fields from required parameters
@@ -92,7 +92,7 @@ Encode BoxedInteger
 
 ``` purescript
 newtype DescribeServicesRequest
-  = DescribeServicesRequest { "ServiceCode" :: NullOrUndefined (String), "FormatVersion" :: NullOrUndefined (String), "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (BoxedInteger) }
+  = DescribeServicesRequest { "ServiceCode" :: Maybe (String), "FormatVersion" :: Maybe (String), "NextToken" :: Maybe (String), "MaxResults" :: Maybe (BoxedInteger) }
 ```
 
 ##### Instances
@@ -115,7 +115,7 @@ Constructs DescribeServicesRequest from required parameters
 #### `newDescribeServicesRequest'`
 
 ``` purescript
-newDescribeServicesRequest' :: ({ "ServiceCode" :: NullOrUndefined (String), "FormatVersion" :: NullOrUndefined (String), "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (BoxedInteger) } -> { "ServiceCode" :: NullOrUndefined (String), "FormatVersion" :: NullOrUndefined (String), "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (BoxedInteger) }) -> DescribeServicesRequest
+newDescribeServicesRequest' :: ({ "ServiceCode" :: Maybe (String), "FormatVersion" :: Maybe (String), "NextToken" :: Maybe (String), "MaxResults" :: Maybe (BoxedInteger) } -> { "ServiceCode" :: Maybe (String), "FormatVersion" :: Maybe (String), "NextToken" :: Maybe (String), "MaxResults" :: Maybe (BoxedInteger) }) -> DescribeServicesRequest
 ```
 
 Constructs DescribeServicesRequest's fields from required parameters
@@ -124,7 +124,7 @@ Constructs DescribeServicesRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeServicesResponse
-  = DescribeServicesResponse { "Services" :: NullOrUndefined (ServiceList), "FormatVersion" :: NullOrUndefined (String), "NextToken" :: NullOrUndefined (String) }
+  = DescribeServicesResponse { "Services" :: Maybe (ServiceList), "FormatVersion" :: Maybe (String), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -147,7 +147,7 @@ Constructs DescribeServicesResponse from required parameters
 #### `newDescribeServicesResponse'`
 
 ``` purescript
-newDescribeServicesResponse' :: ({ "Services" :: NullOrUndefined (ServiceList), "FormatVersion" :: NullOrUndefined (String), "NextToken" :: NullOrUndefined (String) } -> { "Services" :: NullOrUndefined (ServiceList), "FormatVersion" :: NullOrUndefined (String), "NextToken" :: NullOrUndefined (String) }) -> DescribeServicesResponse
+newDescribeServicesResponse' :: ({ "Services" :: Maybe (ServiceList), "FormatVersion" :: Maybe (String), "NextToken" :: Maybe (String) } -> { "Services" :: Maybe (ServiceList), "FormatVersion" :: Maybe (String), "NextToken" :: Maybe (String) }) -> DescribeServicesResponse
 ```
 
 Constructs DescribeServicesResponse's fields from required parameters
@@ -156,7 +156,7 @@ Constructs DescribeServicesResponse's fields from required parameters
 
 ``` purescript
 newtype ExpiredNextTokenException
-  = ExpiredNextTokenException { "Message" :: NullOrUndefined (ErrorMessage') }
+  = ExpiredNextTokenException { "Message" :: Maybe (ErrorMessage') }
 ```
 
 <p>The pagination token expired. Try again without a pagination token.</p>
@@ -181,7 +181,7 @@ Constructs ExpiredNextTokenException from required parameters
 #### `newExpiredNextTokenException'`
 
 ``` purescript
-newExpiredNextTokenException' :: ({ "Message" :: NullOrUndefined (ErrorMessage') } -> { "Message" :: NullOrUndefined (ErrorMessage') }) -> ExpiredNextTokenException
+newExpiredNextTokenException' :: ({ "Message" :: Maybe (ErrorMessage') } -> { "Message" :: Maybe (ErrorMessage') }) -> ExpiredNextTokenException
 ```
 
 Constructs ExpiredNextTokenException's fields from required parameters
@@ -256,7 +256,7 @@ Encode Filters
 
 ``` purescript
 newtype GetAttributeValuesRequest
-  = GetAttributeValuesRequest { "ServiceCode" :: String, "AttributeName" :: String, "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (BoxedInteger) }
+  = GetAttributeValuesRequest { "ServiceCode" :: String, "AttributeName" :: String, "NextToken" :: Maybe (String), "MaxResults" :: Maybe (BoxedInteger) }
 ```
 
 ##### Instances
@@ -279,7 +279,7 @@ Constructs GetAttributeValuesRequest from required parameters
 #### `newGetAttributeValuesRequest'`
 
 ``` purescript
-newGetAttributeValuesRequest' :: String -> String -> ({ "ServiceCode" :: String, "AttributeName" :: String, "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (BoxedInteger) } -> { "ServiceCode" :: String, "AttributeName" :: String, "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (BoxedInteger) }) -> GetAttributeValuesRequest
+newGetAttributeValuesRequest' :: String -> String -> ({ "ServiceCode" :: String, "AttributeName" :: String, "NextToken" :: Maybe (String), "MaxResults" :: Maybe (BoxedInteger) } -> { "ServiceCode" :: String, "AttributeName" :: String, "NextToken" :: Maybe (String), "MaxResults" :: Maybe (BoxedInteger) }) -> GetAttributeValuesRequest
 ```
 
 Constructs GetAttributeValuesRequest's fields from required parameters
@@ -288,7 +288,7 @@ Constructs GetAttributeValuesRequest's fields from required parameters
 
 ``` purescript
 newtype GetAttributeValuesResponse
-  = GetAttributeValuesResponse { "AttributeValues" :: NullOrUndefined (AttributeValueList), "NextToken" :: NullOrUndefined (String) }
+  = GetAttributeValuesResponse { "AttributeValues" :: Maybe (AttributeValueList), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -311,7 +311,7 @@ Constructs GetAttributeValuesResponse from required parameters
 #### `newGetAttributeValuesResponse'`
 
 ``` purescript
-newGetAttributeValuesResponse' :: ({ "AttributeValues" :: NullOrUndefined (AttributeValueList), "NextToken" :: NullOrUndefined (String) } -> { "AttributeValues" :: NullOrUndefined (AttributeValueList), "NextToken" :: NullOrUndefined (String) }) -> GetAttributeValuesResponse
+newGetAttributeValuesResponse' :: ({ "AttributeValues" :: Maybe (AttributeValueList), "NextToken" :: Maybe (String) } -> { "AttributeValues" :: Maybe (AttributeValueList), "NextToken" :: Maybe (String) }) -> GetAttributeValuesResponse
 ```
 
 Constructs GetAttributeValuesResponse's fields from required parameters
@@ -320,7 +320,7 @@ Constructs GetAttributeValuesResponse's fields from required parameters
 
 ``` purescript
 newtype GetProductsRequest
-  = GetProductsRequest { "ServiceCode" :: NullOrUndefined (String), "Filters" :: NullOrUndefined (Filters), "FormatVersion" :: NullOrUndefined (String), "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (BoxedInteger) }
+  = GetProductsRequest { "ServiceCode" :: Maybe (String), "Filters" :: Maybe (Filters), "FormatVersion" :: Maybe (String), "NextToken" :: Maybe (String), "MaxResults" :: Maybe (BoxedInteger) }
 ```
 
 ##### Instances
@@ -343,7 +343,7 @@ Constructs GetProductsRequest from required parameters
 #### `newGetProductsRequest'`
 
 ``` purescript
-newGetProductsRequest' :: ({ "ServiceCode" :: NullOrUndefined (String), "Filters" :: NullOrUndefined (Filters), "FormatVersion" :: NullOrUndefined (String), "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (BoxedInteger) } -> { "ServiceCode" :: NullOrUndefined (String), "Filters" :: NullOrUndefined (Filters), "FormatVersion" :: NullOrUndefined (String), "NextToken" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (BoxedInteger) }) -> GetProductsRequest
+newGetProductsRequest' :: ({ "ServiceCode" :: Maybe (String), "Filters" :: Maybe (Filters), "FormatVersion" :: Maybe (String), "NextToken" :: Maybe (String), "MaxResults" :: Maybe (BoxedInteger) } -> { "ServiceCode" :: Maybe (String), "Filters" :: Maybe (Filters), "FormatVersion" :: Maybe (String), "NextToken" :: Maybe (String), "MaxResults" :: Maybe (BoxedInteger) }) -> GetProductsRequest
 ```
 
 Constructs GetProductsRequest's fields from required parameters
@@ -352,7 +352,7 @@ Constructs GetProductsRequest's fields from required parameters
 
 ``` purescript
 newtype GetProductsResponse
-  = GetProductsResponse { "FormatVersion" :: NullOrUndefined (String), "PriceList" :: NullOrUndefined (PriceList), "NextToken" :: NullOrUndefined (String) }
+  = GetProductsResponse { "FormatVersion" :: Maybe (String), "PriceList" :: Maybe (PriceList), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -375,7 +375,7 @@ Constructs GetProductsResponse from required parameters
 #### `newGetProductsResponse'`
 
 ``` purescript
-newGetProductsResponse' :: ({ "FormatVersion" :: NullOrUndefined (String), "PriceList" :: NullOrUndefined (PriceList), "NextToken" :: NullOrUndefined (String) } -> { "FormatVersion" :: NullOrUndefined (String), "PriceList" :: NullOrUndefined (PriceList), "NextToken" :: NullOrUndefined (String) }) -> GetProductsResponse
+newGetProductsResponse' :: ({ "FormatVersion" :: Maybe (String), "PriceList" :: Maybe (PriceList), "NextToken" :: Maybe (String) } -> { "FormatVersion" :: Maybe (String), "PriceList" :: Maybe (PriceList), "NextToken" :: Maybe (String) }) -> GetProductsResponse
 ```
 
 Constructs GetProductsResponse's fields from required parameters
@@ -384,7 +384,7 @@ Constructs GetProductsResponse's fields from required parameters
 
 ``` purescript
 newtype InternalErrorException
-  = InternalErrorException { "Message" :: NullOrUndefined (ErrorMessage') }
+  = InternalErrorException { "Message" :: Maybe (ErrorMessage') }
 ```
 
 <p>An error on the server occurred during the processing of your request. Try again later.</p>
@@ -409,7 +409,7 @@ Constructs InternalErrorException from required parameters
 #### `newInternalErrorException'`
 
 ``` purescript
-newInternalErrorException' :: ({ "Message" :: NullOrUndefined (ErrorMessage') } -> { "Message" :: NullOrUndefined (ErrorMessage') }) -> InternalErrorException
+newInternalErrorException' :: ({ "Message" :: Maybe (ErrorMessage') } -> { "Message" :: Maybe (ErrorMessage') }) -> InternalErrorException
 ```
 
 Constructs InternalErrorException's fields from required parameters
@@ -418,7 +418,7 @@ Constructs InternalErrorException's fields from required parameters
 
 ``` purescript
 newtype InvalidNextTokenException
-  = InvalidNextTokenException { "Message" :: NullOrUndefined (ErrorMessage') }
+  = InvalidNextTokenException { "Message" :: Maybe (ErrorMessage') }
 ```
 
 <p>The pagination token is invalid. Try again without a pagination token.</p>
@@ -443,7 +443,7 @@ Constructs InvalidNextTokenException from required parameters
 #### `newInvalidNextTokenException'`
 
 ``` purescript
-newInvalidNextTokenException' :: ({ "Message" :: NullOrUndefined (ErrorMessage') } -> { "Message" :: NullOrUndefined (ErrorMessage') }) -> InvalidNextTokenException
+newInvalidNextTokenException' :: ({ "Message" :: Maybe (ErrorMessage') } -> { "Message" :: Maybe (ErrorMessage') }) -> InvalidNextTokenException
 ```
 
 Constructs InvalidNextTokenException's fields from required parameters
@@ -452,7 +452,7 @@ Constructs InvalidNextTokenException's fields from required parameters
 
 ``` purescript
 newtype InvalidParameterException
-  = InvalidParameterException { "Message" :: NullOrUndefined (ErrorMessage') }
+  = InvalidParameterException { "Message" :: Maybe (ErrorMessage') }
 ```
 
 <p>One or more parameters had an invalid value.</p>
@@ -477,7 +477,7 @@ Constructs InvalidParameterException from required parameters
 #### `newInvalidParameterException'`
 
 ``` purescript
-newInvalidParameterException' :: ({ "Message" :: NullOrUndefined (ErrorMessage') } -> { "Message" :: NullOrUndefined (ErrorMessage') }) -> InvalidParameterException
+newInvalidParameterException' :: ({ "Message" :: Maybe (ErrorMessage') } -> { "Message" :: Maybe (ErrorMessage') }) -> InvalidParameterException
 ```
 
 Constructs InvalidParameterException's fields from required parameters
@@ -486,7 +486,7 @@ Constructs InvalidParameterException's fields from required parameters
 
 ``` purescript
 newtype NotFoundException
-  = NotFoundException { "Message" :: NullOrUndefined (ErrorMessage') }
+  = NotFoundException { "Message" :: Maybe (ErrorMessage') }
 ```
 
 <p>The requested resource can't be found.</p>
@@ -511,7 +511,7 @@ Constructs NotFoundException from required parameters
 #### `newNotFoundException'`
 
 ``` purescript
-newNotFoundException' :: ({ "Message" :: NullOrUndefined (ErrorMessage') } -> { "Message" :: NullOrUndefined (ErrorMessage') }) -> NotFoundException
+newNotFoundException' :: ({ "Message" :: Maybe (ErrorMessage') } -> { "Message" :: Maybe (ErrorMessage') }) -> NotFoundException
 ```
 
 Constructs NotFoundException's fields from required parameters
@@ -552,7 +552,7 @@ Encode PriceListItemJSON
 
 ``` purescript
 newtype Service
-  = Service { "ServiceCode" :: NullOrUndefined (String), "AttributeNames" :: NullOrUndefined (AttributeNameList) }
+  = Service { "ServiceCode" :: Maybe (String), "AttributeNames" :: Maybe (AttributeNameList) }
 ```
 
 <p>The metadata for a service, such as the service code and available attribute names.</p>
@@ -577,7 +577,7 @@ Constructs Service from required parameters
 #### `newService'`
 
 ``` purescript
-newService' :: ({ "ServiceCode" :: NullOrUndefined (String), "AttributeNames" :: NullOrUndefined (AttributeNameList) } -> { "ServiceCode" :: NullOrUndefined (String), "AttributeNames" :: NullOrUndefined (AttributeNameList) }) -> Service
+newService' :: ({ "ServiceCode" :: Maybe (String), "AttributeNames" :: Maybe (AttributeNameList) } -> { "ServiceCode" :: Maybe (String), "AttributeNames" :: Maybe (AttributeNameList) }) -> Service
 ```
 
 Constructs Service's fields from required parameters

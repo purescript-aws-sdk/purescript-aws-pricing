@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -29,7 +28,7 @@ instance encodeAttributeNameList :: Encode AttributeNameList where encode = gene
 
 -- | <p>The values of a given attribute, such as <code>Throughput Optimized HDD</code> or <code>Provisioned IOPS</code> for the <code>Amazon EC2</code> <code>volumeType</code> attribute.</p>
 newtype AttributeValue = AttributeValue 
-  { "Value" :: NullOrUndefined (String)
+  { "Value" :: Maybe (String)
   }
 derive instance newtypeAttributeValue :: Newtype AttributeValue _
 derive instance repGenericAttributeValue :: Generic AttributeValue _
@@ -39,12 +38,12 @@ instance encodeAttributeValue :: Encode AttributeValue where encode = genericEnc
 
 -- | Constructs AttributeValue from required parameters
 newAttributeValue :: AttributeValue
-newAttributeValue  = AttributeValue { "Value": (NullOrUndefined Nothing) }
+newAttributeValue  = AttributeValue { "Value": Nothing }
 
 -- | Constructs AttributeValue's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttributeValue' :: ( { "Value" :: NullOrUndefined (String) } -> {"Value" :: NullOrUndefined (String) } ) -> AttributeValue
-newAttributeValue'  customize = (AttributeValue <<< customize) { "Value": (NullOrUndefined Nothing) }
+newAttributeValue' :: ( { "Value" :: Maybe (String) } -> {"Value" :: Maybe (String) } ) -> AttributeValue
+newAttributeValue'  customize = (AttributeValue <<< customize) { "Value": Nothing }
 
 
 
@@ -67,10 +66,10 @@ instance encodeBoxedInteger :: Encode BoxedInteger where encode = genericEncode 
 
 
 newtype DescribeServicesRequest = DescribeServicesRequest 
-  { "ServiceCode" :: NullOrUndefined (String)
-  , "FormatVersion" :: NullOrUndefined (String)
-  , "NextToken" :: NullOrUndefined (String)
-  , "MaxResults" :: NullOrUndefined (BoxedInteger)
+  { "ServiceCode" :: Maybe (String)
+  , "FormatVersion" :: Maybe (String)
+  , "NextToken" :: Maybe (String)
+  , "MaxResults" :: Maybe (BoxedInteger)
   }
 derive instance newtypeDescribeServicesRequest :: Newtype DescribeServicesRequest _
 derive instance repGenericDescribeServicesRequest :: Generic DescribeServicesRequest _
@@ -80,19 +79,19 @@ instance encodeDescribeServicesRequest :: Encode DescribeServicesRequest where e
 
 -- | Constructs DescribeServicesRequest from required parameters
 newDescribeServicesRequest :: DescribeServicesRequest
-newDescribeServicesRequest  = DescribeServicesRequest { "FormatVersion": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ServiceCode": (NullOrUndefined Nothing) }
+newDescribeServicesRequest  = DescribeServicesRequest { "FormatVersion": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "ServiceCode": Nothing }
 
 -- | Constructs DescribeServicesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeServicesRequest' :: ( { "ServiceCode" :: NullOrUndefined (String) , "FormatVersion" :: NullOrUndefined (String) , "NextToken" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (BoxedInteger) } -> {"ServiceCode" :: NullOrUndefined (String) , "FormatVersion" :: NullOrUndefined (String) , "NextToken" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (BoxedInteger) } ) -> DescribeServicesRequest
-newDescribeServicesRequest'  customize = (DescribeServicesRequest <<< customize) { "FormatVersion": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ServiceCode": (NullOrUndefined Nothing) }
+newDescribeServicesRequest' :: ( { "ServiceCode" :: Maybe (String) , "FormatVersion" :: Maybe (String) , "NextToken" :: Maybe (String) , "MaxResults" :: Maybe (BoxedInteger) } -> {"ServiceCode" :: Maybe (String) , "FormatVersion" :: Maybe (String) , "NextToken" :: Maybe (String) , "MaxResults" :: Maybe (BoxedInteger) } ) -> DescribeServicesRequest
+newDescribeServicesRequest'  customize = (DescribeServicesRequest <<< customize) { "FormatVersion": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "ServiceCode": Nothing }
 
 
 
 newtype DescribeServicesResponse = DescribeServicesResponse 
-  { "Services" :: NullOrUndefined (ServiceList)
-  , "FormatVersion" :: NullOrUndefined (String)
-  , "NextToken" :: NullOrUndefined (String)
+  { "Services" :: Maybe (ServiceList)
+  , "FormatVersion" :: Maybe (String)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeServicesResponse :: Newtype DescribeServicesResponse _
 derive instance repGenericDescribeServicesResponse :: Generic DescribeServicesResponse _
@@ -102,18 +101,18 @@ instance encodeDescribeServicesResponse :: Encode DescribeServicesResponse where
 
 -- | Constructs DescribeServicesResponse from required parameters
 newDescribeServicesResponse :: DescribeServicesResponse
-newDescribeServicesResponse  = DescribeServicesResponse { "FormatVersion": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Services": (NullOrUndefined Nothing) }
+newDescribeServicesResponse  = DescribeServicesResponse { "FormatVersion": Nothing, "NextToken": Nothing, "Services": Nothing }
 
 -- | Constructs DescribeServicesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeServicesResponse' :: ( { "Services" :: NullOrUndefined (ServiceList) , "FormatVersion" :: NullOrUndefined (String) , "NextToken" :: NullOrUndefined (String) } -> {"Services" :: NullOrUndefined (ServiceList) , "FormatVersion" :: NullOrUndefined (String) , "NextToken" :: NullOrUndefined (String) } ) -> DescribeServicesResponse
-newDescribeServicesResponse'  customize = (DescribeServicesResponse <<< customize) { "FormatVersion": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Services": (NullOrUndefined Nothing) }
+newDescribeServicesResponse' :: ( { "Services" :: Maybe (ServiceList) , "FormatVersion" :: Maybe (String) , "NextToken" :: Maybe (String) } -> {"Services" :: Maybe (ServiceList) , "FormatVersion" :: Maybe (String) , "NextToken" :: Maybe (String) } ) -> DescribeServicesResponse
+newDescribeServicesResponse'  customize = (DescribeServicesResponse <<< customize) { "FormatVersion": Nothing, "NextToken": Nothing, "Services": Nothing }
 
 
 
 -- | <p>The pagination token expired. Try again without a pagination token.</p>
 newtype ExpiredNextTokenException = ExpiredNextTokenException 
-  { "Message" :: NullOrUndefined (ErrorMessage')
+  { "Message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeExpiredNextTokenException :: Newtype ExpiredNextTokenException _
 derive instance repGenericExpiredNextTokenException :: Generic ExpiredNextTokenException _
@@ -123,12 +122,12 @@ instance encodeExpiredNextTokenException :: Encode ExpiredNextTokenException whe
 
 -- | Constructs ExpiredNextTokenException from required parameters
 newExpiredNextTokenException :: ExpiredNextTokenException
-newExpiredNextTokenException  = ExpiredNextTokenException { "Message": (NullOrUndefined Nothing) }
+newExpiredNextTokenException  = ExpiredNextTokenException { "Message": Nothing }
 
 -- | Constructs ExpiredNextTokenException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newExpiredNextTokenException' :: ( { "Message" :: NullOrUndefined (ErrorMessage') } -> {"Message" :: NullOrUndefined (ErrorMessage') } ) -> ExpiredNextTokenException
-newExpiredNextTokenException'  customize = (ExpiredNextTokenException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newExpiredNextTokenException' :: ( { "Message" :: Maybe (ErrorMessage') } -> {"Message" :: Maybe (ErrorMessage') } ) -> ExpiredNextTokenException
+newExpiredNextTokenException'  customize = (ExpiredNextTokenException <<< customize) { "Message": Nothing }
 
 
 
@@ -176,8 +175,8 @@ instance encodeFilters :: Encode Filters where encode = genericEncode options
 newtype GetAttributeValuesRequest = GetAttributeValuesRequest 
   { "ServiceCode" :: (String)
   , "AttributeName" :: (String)
-  , "NextToken" :: NullOrUndefined (String)
-  , "MaxResults" :: NullOrUndefined (BoxedInteger)
+  , "NextToken" :: Maybe (String)
+  , "MaxResults" :: Maybe (BoxedInteger)
   }
 derive instance newtypeGetAttributeValuesRequest :: Newtype GetAttributeValuesRequest _
 derive instance repGenericGetAttributeValuesRequest :: Generic GetAttributeValuesRequest _
@@ -187,18 +186,18 @@ instance encodeGetAttributeValuesRequest :: Encode GetAttributeValuesRequest whe
 
 -- | Constructs GetAttributeValuesRequest from required parameters
 newGetAttributeValuesRequest :: String -> String -> GetAttributeValuesRequest
-newGetAttributeValuesRequest _AttributeName _ServiceCode = GetAttributeValuesRequest { "AttributeName": _AttributeName, "ServiceCode": _ServiceCode, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetAttributeValuesRequest _AttributeName _ServiceCode = GetAttributeValuesRequest { "AttributeName": _AttributeName, "ServiceCode": _ServiceCode, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetAttributeValuesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetAttributeValuesRequest' :: String -> String -> ( { "ServiceCode" :: (String) , "AttributeName" :: (String) , "NextToken" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (BoxedInteger) } -> {"ServiceCode" :: (String) , "AttributeName" :: (String) , "NextToken" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (BoxedInteger) } ) -> GetAttributeValuesRequest
-newGetAttributeValuesRequest' _AttributeName _ServiceCode customize = (GetAttributeValuesRequest <<< customize) { "AttributeName": _AttributeName, "ServiceCode": _ServiceCode, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetAttributeValuesRequest' :: String -> String -> ( { "ServiceCode" :: (String) , "AttributeName" :: (String) , "NextToken" :: Maybe (String) , "MaxResults" :: Maybe (BoxedInteger) } -> {"ServiceCode" :: (String) , "AttributeName" :: (String) , "NextToken" :: Maybe (String) , "MaxResults" :: Maybe (BoxedInteger) } ) -> GetAttributeValuesRequest
+newGetAttributeValuesRequest' _AttributeName _ServiceCode customize = (GetAttributeValuesRequest <<< customize) { "AttributeName": _AttributeName, "ServiceCode": _ServiceCode, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetAttributeValuesResponse = GetAttributeValuesResponse 
-  { "AttributeValues" :: NullOrUndefined (AttributeValueList)
-  , "NextToken" :: NullOrUndefined (String)
+  { "AttributeValues" :: Maybe (AttributeValueList)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeGetAttributeValuesResponse :: Newtype GetAttributeValuesResponse _
 derive instance repGenericGetAttributeValuesResponse :: Generic GetAttributeValuesResponse _
@@ -208,21 +207,21 @@ instance encodeGetAttributeValuesResponse :: Encode GetAttributeValuesResponse w
 
 -- | Constructs GetAttributeValuesResponse from required parameters
 newGetAttributeValuesResponse :: GetAttributeValuesResponse
-newGetAttributeValuesResponse  = GetAttributeValuesResponse { "AttributeValues": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetAttributeValuesResponse  = GetAttributeValuesResponse { "AttributeValues": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetAttributeValuesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetAttributeValuesResponse' :: ( { "AttributeValues" :: NullOrUndefined (AttributeValueList) , "NextToken" :: NullOrUndefined (String) } -> {"AttributeValues" :: NullOrUndefined (AttributeValueList) , "NextToken" :: NullOrUndefined (String) } ) -> GetAttributeValuesResponse
-newGetAttributeValuesResponse'  customize = (GetAttributeValuesResponse <<< customize) { "AttributeValues": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetAttributeValuesResponse' :: ( { "AttributeValues" :: Maybe (AttributeValueList) , "NextToken" :: Maybe (String) } -> {"AttributeValues" :: Maybe (AttributeValueList) , "NextToken" :: Maybe (String) } ) -> GetAttributeValuesResponse
+newGetAttributeValuesResponse'  customize = (GetAttributeValuesResponse <<< customize) { "AttributeValues": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetProductsRequest = GetProductsRequest 
-  { "ServiceCode" :: NullOrUndefined (String)
-  , "Filters" :: NullOrUndefined (Filters)
-  , "FormatVersion" :: NullOrUndefined (String)
-  , "NextToken" :: NullOrUndefined (String)
-  , "MaxResults" :: NullOrUndefined (BoxedInteger)
+  { "ServiceCode" :: Maybe (String)
+  , "Filters" :: Maybe (Filters)
+  , "FormatVersion" :: Maybe (String)
+  , "NextToken" :: Maybe (String)
+  , "MaxResults" :: Maybe (BoxedInteger)
   }
 derive instance newtypeGetProductsRequest :: Newtype GetProductsRequest _
 derive instance repGenericGetProductsRequest :: Generic GetProductsRequest _
@@ -232,19 +231,19 @@ instance encodeGetProductsRequest :: Encode GetProductsRequest where encode = ge
 
 -- | Constructs GetProductsRequest from required parameters
 newGetProductsRequest :: GetProductsRequest
-newGetProductsRequest  = GetProductsRequest { "Filters": (NullOrUndefined Nothing), "FormatVersion": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ServiceCode": (NullOrUndefined Nothing) }
+newGetProductsRequest  = GetProductsRequest { "Filters": Nothing, "FormatVersion": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "ServiceCode": Nothing }
 
 -- | Constructs GetProductsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetProductsRequest' :: ( { "ServiceCode" :: NullOrUndefined (String) , "Filters" :: NullOrUndefined (Filters) , "FormatVersion" :: NullOrUndefined (String) , "NextToken" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (BoxedInteger) } -> {"ServiceCode" :: NullOrUndefined (String) , "Filters" :: NullOrUndefined (Filters) , "FormatVersion" :: NullOrUndefined (String) , "NextToken" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (BoxedInteger) } ) -> GetProductsRequest
-newGetProductsRequest'  customize = (GetProductsRequest <<< customize) { "Filters": (NullOrUndefined Nothing), "FormatVersion": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ServiceCode": (NullOrUndefined Nothing) }
+newGetProductsRequest' :: ( { "ServiceCode" :: Maybe (String) , "Filters" :: Maybe (Filters) , "FormatVersion" :: Maybe (String) , "NextToken" :: Maybe (String) , "MaxResults" :: Maybe (BoxedInteger) } -> {"ServiceCode" :: Maybe (String) , "Filters" :: Maybe (Filters) , "FormatVersion" :: Maybe (String) , "NextToken" :: Maybe (String) , "MaxResults" :: Maybe (BoxedInteger) } ) -> GetProductsRequest
+newGetProductsRequest'  customize = (GetProductsRequest <<< customize) { "Filters": Nothing, "FormatVersion": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "ServiceCode": Nothing }
 
 
 
 newtype GetProductsResponse = GetProductsResponse 
-  { "FormatVersion" :: NullOrUndefined (String)
-  , "PriceList" :: NullOrUndefined (PriceList)
-  , "NextToken" :: NullOrUndefined (String)
+  { "FormatVersion" :: Maybe (String)
+  , "PriceList" :: Maybe (PriceList)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeGetProductsResponse :: Newtype GetProductsResponse _
 derive instance repGenericGetProductsResponse :: Generic GetProductsResponse _
@@ -254,18 +253,18 @@ instance encodeGetProductsResponse :: Encode GetProductsResponse where encode = 
 
 -- | Constructs GetProductsResponse from required parameters
 newGetProductsResponse :: GetProductsResponse
-newGetProductsResponse  = GetProductsResponse { "FormatVersion": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "PriceList": (NullOrUndefined Nothing) }
+newGetProductsResponse  = GetProductsResponse { "FormatVersion": Nothing, "NextToken": Nothing, "PriceList": Nothing }
 
 -- | Constructs GetProductsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetProductsResponse' :: ( { "FormatVersion" :: NullOrUndefined (String) , "PriceList" :: NullOrUndefined (PriceList) , "NextToken" :: NullOrUndefined (String) } -> {"FormatVersion" :: NullOrUndefined (String) , "PriceList" :: NullOrUndefined (PriceList) , "NextToken" :: NullOrUndefined (String) } ) -> GetProductsResponse
-newGetProductsResponse'  customize = (GetProductsResponse <<< customize) { "FormatVersion": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "PriceList": (NullOrUndefined Nothing) }
+newGetProductsResponse' :: ( { "FormatVersion" :: Maybe (String) , "PriceList" :: Maybe (PriceList) , "NextToken" :: Maybe (String) } -> {"FormatVersion" :: Maybe (String) , "PriceList" :: Maybe (PriceList) , "NextToken" :: Maybe (String) } ) -> GetProductsResponse
+newGetProductsResponse'  customize = (GetProductsResponse <<< customize) { "FormatVersion": Nothing, "NextToken": Nothing, "PriceList": Nothing }
 
 
 
 -- | <p>An error on the server occurred during the processing of your request. Try again later.</p>
 newtype InternalErrorException = InternalErrorException 
-  { "Message" :: NullOrUndefined (ErrorMessage')
+  { "Message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInternalErrorException :: Newtype InternalErrorException _
 derive instance repGenericInternalErrorException :: Generic InternalErrorException _
@@ -275,18 +274,18 @@ instance encodeInternalErrorException :: Encode InternalErrorException where enc
 
 -- | Constructs InternalErrorException from required parameters
 newInternalErrorException :: InternalErrorException
-newInternalErrorException  = InternalErrorException { "Message": (NullOrUndefined Nothing) }
+newInternalErrorException  = InternalErrorException { "Message": Nothing }
 
 -- | Constructs InternalErrorException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalErrorException' :: ( { "Message" :: NullOrUndefined (ErrorMessage') } -> {"Message" :: NullOrUndefined (ErrorMessage') } ) -> InternalErrorException
-newInternalErrorException'  customize = (InternalErrorException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInternalErrorException' :: ( { "Message" :: Maybe (ErrorMessage') } -> {"Message" :: Maybe (ErrorMessage') } ) -> InternalErrorException
+newInternalErrorException'  customize = (InternalErrorException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The pagination token is invalid. Try again without a pagination token.</p>
 newtype InvalidNextTokenException = InvalidNextTokenException 
-  { "Message" :: NullOrUndefined (ErrorMessage')
+  { "Message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInvalidNextTokenException :: Newtype InvalidNextTokenException _
 derive instance repGenericInvalidNextTokenException :: Generic InvalidNextTokenException _
@@ -296,18 +295,18 @@ instance encodeInvalidNextTokenException :: Encode InvalidNextTokenException whe
 
 -- | Constructs InvalidNextTokenException from required parameters
 newInvalidNextTokenException :: InvalidNextTokenException
-newInvalidNextTokenException  = InvalidNextTokenException { "Message": (NullOrUndefined Nothing) }
+newInvalidNextTokenException  = InvalidNextTokenException { "Message": Nothing }
 
 -- | Constructs InvalidNextTokenException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidNextTokenException' :: ( { "Message" :: NullOrUndefined (ErrorMessage') } -> {"Message" :: NullOrUndefined (ErrorMessage') } ) -> InvalidNextTokenException
-newInvalidNextTokenException'  customize = (InvalidNextTokenException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidNextTokenException' :: ( { "Message" :: Maybe (ErrorMessage') } -> {"Message" :: Maybe (ErrorMessage') } ) -> InvalidNextTokenException
+newInvalidNextTokenException'  customize = (InvalidNextTokenException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>One or more parameters had an invalid value.</p>
 newtype InvalidParameterException = InvalidParameterException 
-  { "Message" :: NullOrUndefined (ErrorMessage')
+  { "Message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInvalidParameterException :: Newtype InvalidParameterException _
 derive instance repGenericInvalidParameterException :: Generic InvalidParameterException _
@@ -317,18 +316,18 @@ instance encodeInvalidParameterException :: Encode InvalidParameterException whe
 
 -- | Constructs InvalidParameterException from required parameters
 newInvalidParameterException :: InvalidParameterException
-newInvalidParameterException  = InvalidParameterException { "Message": (NullOrUndefined Nothing) }
+newInvalidParameterException  = InvalidParameterException { "Message": Nothing }
 
 -- | Constructs InvalidParameterException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidParameterException' :: ( { "Message" :: NullOrUndefined (ErrorMessage') } -> {"Message" :: NullOrUndefined (ErrorMessage') } ) -> InvalidParameterException
-newInvalidParameterException'  customize = (InvalidParameterException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidParameterException' :: ( { "Message" :: Maybe (ErrorMessage') } -> {"Message" :: Maybe (ErrorMessage') } ) -> InvalidParameterException
+newInvalidParameterException'  customize = (InvalidParameterException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The requested resource can't be found.</p>
 newtype NotFoundException = NotFoundException 
-  { "Message" :: NullOrUndefined (ErrorMessage')
+  { "Message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeNotFoundException :: Newtype NotFoundException _
 derive instance repGenericNotFoundException :: Generic NotFoundException _
@@ -338,12 +337,12 @@ instance encodeNotFoundException :: Encode NotFoundException where encode = gene
 
 -- | Constructs NotFoundException from required parameters
 newNotFoundException :: NotFoundException
-newNotFoundException  = NotFoundException { "Message": (NullOrUndefined Nothing) }
+newNotFoundException  = NotFoundException { "Message": Nothing }
 
 -- | Constructs NotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotFoundException' :: ( { "Message" :: NullOrUndefined (ErrorMessage') } -> {"Message" :: NullOrUndefined (ErrorMessage') } ) -> NotFoundException
-newNotFoundException'  customize = (NotFoundException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newNotFoundException' :: ( { "Message" :: Maybe (ErrorMessage') } -> {"Message" :: Maybe (ErrorMessage') } ) -> NotFoundException
+newNotFoundException'  customize = (NotFoundException <<< customize) { "Message": Nothing }
 
 
 
@@ -367,8 +366,8 @@ instance encodePriceListItemJSON :: Encode PriceListItemJSON where encode = gene
 
 -- | <p>The metadata for a service, such as the service code and available attribute names.</p>
 newtype Service = Service 
-  { "ServiceCode" :: NullOrUndefined (String)
-  , "AttributeNames" :: NullOrUndefined (AttributeNameList)
+  { "ServiceCode" :: Maybe (String)
+  , "AttributeNames" :: Maybe (AttributeNameList)
   }
 derive instance newtypeService :: Newtype Service _
 derive instance repGenericService :: Generic Service _
@@ -378,12 +377,12 @@ instance encodeService :: Encode Service where encode = genericEncode options
 
 -- | Constructs Service from required parameters
 newService :: Service
-newService  = Service { "AttributeNames": (NullOrUndefined Nothing), "ServiceCode": (NullOrUndefined Nothing) }
+newService  = Service { "AttributeNames": Nothing, "ServiceCode": Nothing }
 
 -- | Constructs Service's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newService' :: ( { "ServiceCode" :: NullOrUndefined (String) , "AttributeNames" :: NullOrUndefined (AttributeNameList) } -> {"ServiceCode" :: NullOrUndefined (String) , "AttributeNames" :: NullOrUndefined (AttributeNameList) } ) -> Service
-newService'  customize = (Service <<< customize) { "AttributeNames": (NullOrUndefined Nothing), "ServiceCode": (NullOrUndefined Nothing) }
+newService' :: ( { "ServiceCode" :: Maybe (String) , "AttributeNames" :: Maybe (AttributeNameList) } -> {"ServiceCode" :: Maybe (String) , "AttributeNames" :: Maybe (AttributeNameList) } ) -> Service
+newService'  customize = (Service <<< customize) { "AttributeNames": Nothing, "ServiceCode": Nothing }
 
 
 
